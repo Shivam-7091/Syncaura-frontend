@@ -6,6 +6,8 @@ import documentReducer from "./slices/documentSlice";
 import authReducer from "./slices/authSlice";
 import reportReducer from "./slices/reportSlice";
 import noticeReducer from "./slices/noticeSlice";
+import uiReducer from "./uiSlice";
+import languageReducer from "./slices/languageSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,5 +18,7 @@ export const store = configureStore({
     documents: documentReducer,
     reports: reportReducer,
     notice: noticeReducer,
+    ui: uiReducer,
+    language: languageReducer,
   },
 });

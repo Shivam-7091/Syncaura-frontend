@@ -1,9 +1,9 @@
 import axios from "axios";
-import BASE_URL from "./routes.js";
+
 
 const api = axios.create({
-  baseURL: `${BASE_URL}/api`,
-  withCredentials: true,
+  baseURL: "http://localhost:5000/api",
+  
 });
 
 api.interceptors.request.use(

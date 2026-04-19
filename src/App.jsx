@@ -77,7 +77,7 @@ export default function App() {
             <Route path="/sign-up" element={<SignUp />} />
           </Route>
           <Route
-            element={<ProtectRoute allowedRoles={["user, admin, co-admin"]} />}
+            element={<ProtectRoute allowedRoles={["user", "admin", "co-admin"]} />}
           >
             <Route path="/meet/:id" element={<CurrentMeet />} />
           </Route>
