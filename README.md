@@ -109,9 +109,6 @@ Syncaura connects multi-role interfaces (Admin, Co-Admin, and User) with global 
    npm run dev
    ```
 
-## API Documentation
-The API client communicates with the backend server via endpoints. For documentation on how thunks, slices, interceptors, and error handlers are configured, check:
-* **[API_Architecture.md](file:///c:/Users/Shivratna/OneDrive/Desktop/Syncora%20Fr/Syncaura-frontend-1/API_Architecture.md)**
 
 ## Roadmap
 - [ ] Connect the chat component with live WebSockets.
@@ -121,10 +118,3 @@ The API client communicates with the backend server via endpoints. For documenta
 - [ ] Add Progressive Web App (PWA) support for offline usage.
 - [ ] Write frontend unit tests.
 
-## Author
-**Shivratna Shinde**  
-Information Technology Student | Full-Stack Developer | Team Lead
-
-* [LinkedIn](https://www.linkedin.com/in/shivratna-shinde-a0a208226/)
-* [GitHub](https://github.com/Shivratna-27)
-* [Portfolio](https://shivratnashinde.com/)
