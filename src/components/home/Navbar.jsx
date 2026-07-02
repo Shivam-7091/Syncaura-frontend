@@ -129,7 +129,7 @@ const Navbar = () => {
             }}
           >
             Start Free
-          </Link>
+          </button>
         </div>
       </div>
 
@@ -150,7 +150,7 @@ const Navbar = () => {
             }}
           >
             Start Free
-          </Link>
+          </button>
         </div>
 
         {/* Navigation Links Container - Centered with Border */}
