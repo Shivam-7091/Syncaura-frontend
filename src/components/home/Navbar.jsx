@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Sun, Moon } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
 const Navbar = () => {
+  const navigate = useNavigate(); // ADDED
   const { theme, toggleTheme } = useDarkMode();
   const [activeSection, setActiveSection] = useState('home');
 
@@ -114,6 +116,7 @@ const Navbar = () => {
           </a>
 
           <button
+            onClick={() => navigate("/sign-up")}  // ADDED
             className="px-6 py-2 text-sm font-medium rounded-md hover:opacity-90 transition-opacity"
             style={{
               backgroundColor: "var(--accent-color)",
@@ -125,15 +128,15 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile - EXACT Figma Design */}
+      {/* Mobile */}
       <div className="md:hidden">
-        {/* Top Row: Logo + Start Free Button */}
         <div className="flex items-center justify-between px-6 py-5">
           <div className="text-[23px] font-bold tracking-tight" style={{ color: 'var(--text-primary)' }}>
             FLOWBIT
           </div>
           
           <button
+            onClick={() => navigate("/sign-up")} // ADDED
             className="px-4 py-1 text-s font-medium rounded-[10px]"
             style={{
               backgroundColor: "var(--accent-color)",
@@ -144,7 +147,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Navigation Links Container - Centered with Border */}
         <div className="flex justify-center px-4 py-5 pb-3">
           <nav 
             className="inline-flex items-center gap-5 px-6 py-2.5 rounded-[15px] border overflow-x-auto"
