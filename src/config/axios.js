@@ -12,7 +12,6 @@ api.interceptors.request.use(
   (config) => {
     // Read accessToken first (set by authSlice), fall back to legacy "token" key
     const token = localStorage.getItem("accessToken") || localStorage.getItem("token");
-
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
