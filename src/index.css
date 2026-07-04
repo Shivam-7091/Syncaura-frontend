@@ -194,3 +194,37 @@
 .dark .resource-bar-engineering { background-color: #00d4ff !important; }
 .dark .resource-bar-design { background-color: #bc13fe !important; }
 /* ... baaki categories ke liye bhi */
+
+@layer components {
+  .btn-hover {
+    @apply relative overflow-hidden cursor-pointer;
+    will-change: transform, filter;
+    
+    transition:
+      transform 250ms cubic-bezier(.22, 1, .36, 1),
+      filter 250ms ease,
+      box-shadow 250ms ease;
+  }
+
+  .btn-hover:hover {
+    transform: translateY(-3px) scale(1.03);
+    filter: brightness(0.92);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .btn-hover:active {
+    transform: translateY(0) scale(0.97);
+  }
+
+  .btn-hover:disabled {
+    transform: none;
+    filter: none;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  .btn-hover:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
+}
