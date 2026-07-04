@@ -6,14 +6,14 @@ import {
   refreshAccessToken,
 } from "../features/authThunks";
 
-const token = localStorage.getItem("token");
+const storedToken = localStorage.getItem("token") || localStorage.getItem("accessToken");
 
 const initialState = {
   user: null,
-  token,
+  token: storedToken,
   isLoading: false,
   error: null,
-  isAuthenticated: !!token,
+  isAuthenticated: !!storedToken,
   authChecking: true,
 };
 
@@ -34,13 +34,15 @@ const authSlice = createSlice({
       }
     },
     logout(state) {
-      state.isLoading=true
+      state.isLoading = true;
       state.user = null;
       state.token = null;
       state.isAuthenticated = false;
+      state.authChecking = false;
+      localStorage.removeItem("token");
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
-      state.isLoading=false;
+      state.isLoading = false;
     },
   },
   extraReducers: (builder) => {

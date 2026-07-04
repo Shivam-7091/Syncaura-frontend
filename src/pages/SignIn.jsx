@@ -128,33 +128,39 @@ const SignIn = () => {
             Welcome Back
           </h1>
 
-          {/* EMAIL */}
-          <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">📧</span>
-            <input
-  type="email"
-  placeholder="Email Address"
-  className="w-full border border-gray-300 px-4 py-3 rounded-lg bg-white text-gray-700 placeholder-gray-400 focus:outline-none"
-/>
-          </div>
+          <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-5">
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">📧</span>
+              <input
+                type="email"
+                placeholder="Email Address"
+                {...register("email", { required: "Email is required" })}
+                className="w-full border border-gray-300 px-4 py-3 rounded-lg bg-white text-gray-700 placeholder-gray-400 focus:outline-none"
+              />
+            </div>
 
-          {/* PASSWORD */}
-          <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">🔒</span>
-            <input
-  type="password"
-  placeholder="Password"
-  className="w-full border border-gray-300 px-4 py-3 rounded-lg bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-/>
-          </div>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">🔒</span>
+              <input
+                type="password"
+                placeholder="Password"
+                {...register("password", { required: "Password is required" })}
+                className="w-full border border-gray-300 px-4 py-3 rounded-lg bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
 
-          <p className="text-sm text-right text-blue-500 cursor-pointer">
-            Forgot Password?
-          </p>
+            <p className="text-sm text-right text-blue-500 cursor-pointer">
+              Forgot Password?
+            </p>
 
-          <button className="w-full bg-blue-600 text-white py-3 rounded-md shadow-md">
-            Sign In
-          </button>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-blue-600 text-white py-3 rounded-md shadow-md disabled:opacity-70"
+            >
+              {isSubmitting ? "Signing In..." : "Sign In"}
+            </button>
+          </form>
 
           <div className="flex items-center my-6">
   <div className="flex-grow h-px bg-gray-300"></div>
@@ -175,7 +181,10 @@ const SignIn = () => {
 </div>
 
           <p className="text-center text-sm text-gray-500">
-            Don’t have an account? <span className="text-blue-500">Sign Up</span>
+            Don’t have an account?{' '}
+            <Link to="/sign-up" className="text-blue-500 hover:underline">
+              Sign Up
+            </Link>
           </p>
 
         </div>
