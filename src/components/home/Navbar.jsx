@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Sun, Moon } from 'lucide-react';
-import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../../hooks/useDarkMode";
 import { Link } from 'react-router-dom';
 
@@ -8,6 +7,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { theme, toggleTheme } = useDarkMode();
   const [activeSection, setActiveSection] = useState('home');
+
 
   useEffect(() => {
     const handleScroll = () => {
