@@ -1,21 +1,18 @@
-const eye = document.querySelector('.eye-button');
-const password = document.querySelector('#password');
-const form = document.querySelector('#login-form');
-const toast = document.querySelector('.toast');
-eye.addEventListener('click', () => {
-  const visible = password.type === 'text';
-  password.type = visible ? 'password' : 'text';
-  eye.setAttribute('aria-label', visible ? 'Show password' : 'Hide password');
-});
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2600);
-});
+function login() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-document.querySelectorAll('.social').forEach((button) => {
-  button.addEventListener('click', (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-  });
-});
+    if (!email || !password) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    // Example login validation
+    console.log("Email:", email);
+    console.log("Password:", password);
+
+    alert("Login Successful!");
+
+    // Redirect example
+    // window.location.href = "dashboard.html";
+}
