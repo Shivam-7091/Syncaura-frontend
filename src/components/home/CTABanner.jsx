@@ -41,7 +41,7 @@ const CTABanner = () => {
             
             {/* Buttons - SIDE BY SIDE on mobile! */}
             <div className="flex gap-3 md:gap-4 w-full max-w-md">
-              <Link to="/sign-up" className="flex-1">
+              <Link to="/SignUp" className="flex-1">
                 <button className="w-full px-6 py-3 bg-white text-gray-900 text-sm font-medium hover:opacity-90 transition-colors btn-hover">
                   Get started
                 </button>

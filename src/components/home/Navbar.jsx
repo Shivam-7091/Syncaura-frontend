@@ -178,7 +178,7 @@ const Navbar = () => {
           </div>
 
           <button
-            onClick={() => navigate("/sign-up")}
+            onClick={() => navigate("/SignUp")}
             className="px-4 py-1 text-sm font-medium rounded-[10px]"
             style={{
               backgroundColor: "var(--accent-color)",
